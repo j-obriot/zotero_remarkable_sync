@@ -4,6 +4,10 @@ Notably, it doesn't require the tablet to have anything installed on it. It does
 
 Files can be renamed afterward, but should keep the 8-characters identifying string at the end of the name (or just before .pdf).
 
+For now it's only one way, Zotero -> Remarkable. But with a few modification it should be simple to do the inverse.
+
+I don't know if item keys are preserved between synced zotero libraries...
+
 should be POSIX compliant but needs:
 
 - `jq` for json parsing
