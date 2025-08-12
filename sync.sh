@@ -18,7 +18,7 @@ fls=$(curl http://10.11.99.1/documents/$a | jq -r '.[] | .VissibleName')
 
 ZOTERO="$HOME/Zotero"
 
-a=$(sqlite3 -tabs "$ZOTERO/zotero.sqlite" "
+a=$(sqlite3 -readonly -tabs "file:$ZOTERO/zotero.sqlite?immutable=1" "
 SELECT a.itemID, a.key, f.path, v.value, v2.value, p.firstName, p.lastName
 from itemAttachments f
 inner join items a on a.itemID = f.itemID
