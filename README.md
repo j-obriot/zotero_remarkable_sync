@@ -10,7 +10,8 @@ For now it's only one way, Zotero -> Remarkable. But with a few modification it 
 
 I don't know if item keys are preserved between synced zotero libraries...
 
-should be POSIX compliant but needs:
+~~should be POSIX compliant but needs:~~
+Requires a shell with string indexing and:
 
 - `jq` for json parsing
 - `curl`
