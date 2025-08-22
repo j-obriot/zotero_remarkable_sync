@@ -3,6 +3,9 @@
 send() {
 	echo "sending file: $2"
 	echo "as: $1"
+	# it seems like you can't specify which collection to upload to directly
+	# but is instead inferred from the last query, which should be the correct collection.
+	# seems like a strange way to handle upload to me, I don't really like that...
 	curl -F"file=@\"$2\";filename=\"$1\"" http://10.11.99.1/upload
 }
 
@@ -33,10 +36,11 @@ inner join collections c on i.collectionID = c.collectionID
 WHERE f.contentType = 'application/pdf'
 AND d.fieldID = 1
 AND d2.fieldID = 6
-AND f.linkMode = 1
 AND u.orderIndex = 0
 AND c.collectionName = 'Doctorat';
 ")
+# AND f.linkMode = 1 # not sure, not having it can give duplicates if you have multiple pdfs for a single article, whatever
+# but having it doesn't seem to prioritize the right pdf
 
 IFS="
 
