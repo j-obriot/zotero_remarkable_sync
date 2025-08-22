@@ -86,7 +86,8 @@ for i in $a; do
 		echo "------------"
 		continue
 	fi
-	to="$lastname et al. ${dat::4} ${title::100}_$key.pdf"
+	# to="$lastname et al. ${dat::4} ${title::100}_$key.pdf"
+	to="$lastname et al. ${dat::4} ${title}_$key.pdf"
 	# echo "$to"
 	# echo "$key"
 	# echo "$firstname" "$lastname"
